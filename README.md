@@ -1,4 +1,4 @@
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/zakdim/spring5-webflux-rest/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/zakdim/spring5-webflux-rest/tree/master)
+[//]: # ([![CircleCI]&#40;https://dl.circleci.com/status-badge/img/gh/zakdim/spring5-webflux-rest/tree/master.svg?style=svg&#41;]&#40;https://dl.circleci.com/status-badge/redirect/gh/zakdim/spring5-webflux-rest/tree/master&#41;)
 
 # RESTFul WebService with Spring WebFlux
 
