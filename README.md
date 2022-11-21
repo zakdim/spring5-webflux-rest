@@ -38,3 +38,17 @@ docker rm mongo-sfg
 ```
 
 * To access MongoDB use [Roboto 3T](https://robomongo.org/)
+
+### Lecture 411: Create Category Controller
+
+* To test CategoryController with curl :
+
+```shell
+# Get all categories
+curl -X 'GET' 'http://localhost:8080/api/v1/categories' -H 'accept: */*'
+curl -X 'GET' 'http://localhost:8080/api/v1/categories' -H 'Accept: application/json'
+
+# Get category by ID
+curl -X 'GET' 'http://localhost:8080/api/v1/categories/637ad990ce9b462f15e82923' -H 'Accept: */*'
+
+```
