@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.Optional;
+
 /**
  * Create by dmitri on 2022-11-20.
  */
@@ -43,5 +45,26 @@ public class CategoryController {
     Mono<Category> update(@PathVariable String id, @RequestBody Category category) {
         category.setId(id);
         return categoryRepository.save(category);
+    }
+
+    @PatchMapping("/{id}")
+    Mono<Category> patch(@PathVariable String id, @RequestBody Category category) {
+
+//        Category foundCategory = categoryRepository.findById(id).block();
+//
+//        if (foundCategory.getDescription() != category.getDescription()) {
+//            foundCategory.setDescription(category.getDescription());
+//            return categoryRepository.save(foundCategory);
+//        }
+//        return Mono.just(foundCategory);
+
+        return categoryRepository.findById(id)
+                .flatMap(foundCategory -> {
+                    if (foundCategory.getDescription() != category.getDescription()) {
+                        foundCategory.setDescription(category.getDescription());
+                        return categoryRepository.save(foundCategory);
+                    }
+                    return Mono.just(foundCategory);
+                });
     }
 }
